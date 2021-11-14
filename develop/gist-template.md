@@ -4,7 +4,7 @@ Regular expression, aka Regex, is a sequence of characters that specify a partic
 
 ## Summary
 
-I will Validate the username "QuotableThoreau_2021" as an example of how to use regular expression for validation purposes.  
+As a demonstration I will match an email = QuotableThoreau@test.com 
 
 ## Table of Contents
 
@@ -22,13 +22,15 @@ I will Validate the username "QuotableThoreau_2021" as an example of how to use 
 
 ## Regex Components
 
-The components of the regex I am using to match my username "QuotableThoreau_2021" is as follows: 
-username = `/^[A-Za-z]\D*\w*$/ig;`
+The components of the regex I am using to match the email  QuotableThoreau@test.com is as follows: 
+username = `/^[A-Z]\w{1,}@[A-Z]\w*.(com)/ig;`
 
 The `^` caret symbols is an anchor that matches only upper/lowercase letters in the first group at the beginning.
-The first group `[A-Za-z]` matches a range of upper/lowercase letters.
-`\D*` matches all non-numbers for length
-`\w*$` matches all shorthand characters including alpha, 0-9 and underscore at the end of the string.
+The first group `[A-Z]` matches a range of uppercase letters.
+`\w{1,}` shorthand character class matches 
+`@` matches @ symbol in email.
+`[A-Z]\w*` matches all shorthand characters before `.`
+`.(com)` is a group that matches `.com` 
 `/ig` are globals flags; `i` ignores case and `g` performs a golbal search.
 
 ## Screen Shot
