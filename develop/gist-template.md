@@ -1,10 +1,10 @@
-# Regex-Tutorial 
+# The Gist of Regular Expressions [Regex] 
 
-Regex is 
+Regular expression, aka Regex, is a sequence of characters that specify a particular search pattern.  Regex is a string-searching algorithm that uses "find", "match" and "replace" operations on strings.  Regex is also used for input validation; for example, validating an email.  
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+I will Validate the username "QuotableThoreau_2021" as an example of how to use regular expression for validation purposes.  
 
 ## Table of Contents
 
@@ -22,28 +22,65 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ## Regex Components
 
+The components of the regex I am using to match my username "QuotableThoreau_2021" is as follows: 
+username = `/^[A-Za-z]\D*\w*$/ig;`
+
+The `^` caret symbols is an anchor that matches only upper/lowercase letters in the first group at the beginning.
+The first group `[A-Za-z]` matches a range of upper/lowercase letters.
+`\D*` matches all non-numbers for length
+`\w*$` matches all shorthand characters including alpha, 0-9 and underscore at the end of the string.
+`/ig` are globals flags; `i` ignores case and `g` performs a golbal search.
+
+## Screen Shot
+Screen Shot 2021-11-14 at 11.55.31 AM.png
+
 ### Anchors
+Anchors are used to match position, not character, before, after or between characters. The caret symbol matches the first character in a string.  The $ matches the last character in the string. 
 
 ### Quantifiers
+Quantifiers are used to match a number of instances of a character group, or character class in a string.  An exact count or range is placed in curly brackets.  For example, matching a four digit number would look like:  `/\d{4}/;`
+A range would be written as such: `/\d{4,10}/;`
+Or as an infinite range like: `/\d{4,};`
 
 ### OR Operator
+OR Operator uses `|` the pipe character 
 
 ### Character Classes
+Chatacter Classes allows matching of any symbol in a character set; for example, a phone number.  The regex would be written like so: `/\d/g;` 
 
 ### Flags
+There are two flags `i and g`.  
+The flag "g" performs a global search and is written like so: 
+`/g`
+The flag `i` ignores case and is written like so: `/i`
+You can use `i and g` together and would be written as such: `/ig`
 
 ### Grouping and Capturing
+Grouping and Capturing is `()` and are used to create blocks of patterns as well as matching different parts for extracting data and replacing it with something else.  For example, `([\w])`
+You can also use non-capturing to use a group that doesn't need to be processed, which would look like: `(?: )`
+You can also capture a group for later processing, which would look like: `(?<>)`
 
 ### Bracket Expressions
+Bracket Expressions are used to define the character class.  Any characters inside the brackets will produce a match to the Regex pattern.  For example, `[a-z]/i` defines any character class within the alphabet and here we've also included the `i` flag to ignore case
 
 ### Greedy and Lazy Match
+Greedy and Lazy Match are quantifiers.  Greedy will try to match the pattern at every position in the string.  On the other hand, Lazy is deigned to repeat a minimal number of times. This mode is enabled by putting `?` after the quantifier.  For example, 
+Greedy would return `/G[a-z]*y/i` "Greedy".
+Lazy would return `/G[a-z]*?y/i` "Gy".
 
 ### Boundaries
+Boundary is a metacharacter `\b` is an anchor like `^` and `$`.  Boundaries match a "whole words only" match.  For example, `\bword\b`
 
 ### Back-references
-
+Backreferences match the same text as previously matched by a capturing group.  The backreference uses `\1` to match the first captured group.  Backreferences can be reused as such: `\1\1` OR upto `\99` if a Regex has 99 captured groups.
 ### Look-ahead and Look-behind
+Lookahead and Lookbehind are zero-length assertions similar to start and end of line anchors.  The difference is that "lookaround" only assert whether a match is possible or not.  Let's say you want to match `u`, a Lookahead would look like such: `/q(?=u)/`.
+Let's say you wanted to be sure there is no `u`, a negative Lookahead would look like such: `/q(?!u)/`.
+Lookbehind is similar to Lookahead except that it works backwards.  The positive Lookbehind is written as such: `/(?<=text)/`.
+The negative Lookbehind is written as such: `/(?<!text>)/`.
+
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+My name is Aimee and I love creating solutions and learning something new everyday.  
+GitHub: https://www.github.com/aeforbush
