@@ -23,4 +23,3 @@ THEN I find a section about the author and a link to the author’s GitHub profi
 
 ## Deployment Link
 The deployment link to the tutorial on Gist is : 
-🧐[The Gist of it](https://gist.github.com/Govepitr/66dbf4e2a570ce3e23bded2e0deae5d9)🤣
