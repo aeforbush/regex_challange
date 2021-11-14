@@ -23,3 +23,4 @@ THEN I find a section about the author and a link to the author’s GitHub profi
 
 ## Deployment Link
 The deployment link to the tutorial on Gist is : 
+https://gist.github.com/aeforbush/a3bedca145e4aef7a2f47a9408d12d40
